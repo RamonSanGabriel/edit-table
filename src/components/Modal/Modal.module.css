@@ -1,0 +1,61 @@
+.modalContainer {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* background-color: #f3e6e6; */
+  /* opacity: 0.3; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  /* place-items: center; */
+  /* padding: 1rem; */
+}
+
+.modal {
+  display: flex;
+  background-color: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 12px;
+  /* width: 25em; */
+}
+.formGroup {
+  /*  margin-bottom: 0.313rem;
+  width: 100%; */
+}
+label p {
+  margin: 0;
+  text-align: left;
+}
+input,
+textarea {
+  display: block;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 80%;
+  margin: 0 auto 15px;
+}
+textarea {
+  resize: none;
+}
+input::placeholder,
+textarea::placeholder {
+  /* text-align: center; */
+  /* place-items: center; */
+  /* align-items: center; */
+}
+select {
+  display: block;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 100%;
+  /* margin: 0 auto; */
+  /* padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  width: 100%; */
+}
