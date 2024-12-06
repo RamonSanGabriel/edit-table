@@ -16,7 +16,7 @@ table {
   }
   & td {
     border-top: 0.5px solid #ddd;
-    /* overflow: hidden; */
+    overflow: hidden;
   }
   & th {
     font-weight: 700;

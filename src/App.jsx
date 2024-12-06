@@ -6,7 +6,7 @@ import Table from './components/Table/Table';
 
 function App() {
   return (
-    <div>
+    <div className="appContainer">
       <h1>React Editable Table</h1>
       <Table />
     </div>
