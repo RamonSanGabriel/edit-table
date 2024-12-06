@@ -1,10 +1,13 @@
 import css from './Modal.module.css';
 
 const Modal = () => {
+  const handleSubmit = () => {
+    alert('Form submitted');
+  };
   return (
     <div className={css.modalContainer}>
       <div className={css.modal}>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className={css.formGroup}>
             <label htmlFor="page">
               <p>Page</p>
@@ -36,6 +39,9 @@ const Modal = () => {
               </select>
             </label>
           </div>
+          <button className={css.submitBtn} type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
