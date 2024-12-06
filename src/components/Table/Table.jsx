@@ -20,12 +20,12 @@ const Table = () => {
             <td className={css.tdStatus}>Live</td>
             <td className={css.tdIcons}>
               <span>
-                <button>
+                <button className={css.tdButton}>
                   <FaTrashAlt />
                 </button>
               </span>
               <span>
-                <button>
+                <button className={css.tdButton}>
                   <FaPencilAlt />
                 </button>
               </span>
@@ -33,18 +33,16 @@ const Table = () => {
           </tr>
           <tr>
             <td>About</td>
-            <td className={css.tdDescription}>
-              This is the About page lorem50
-            </td>
-            <td>Draft</td>
+            <td className={css.tdDescription}>This is the About page</td>
+            <td className={css.tdStatus}>Draft</td>
             <td className={css.tdIcons}>
               <span>
-                <button>
+                <button className={css.tdButton}>
                   <FaTrashAlt />
                 </button>
               </span>
               <span>
-                <button>
+                <button className={css.tdButton}>
                   <FaPencilAlt />
                 </button>
               </span>
@@ -53,15 +51,15 @@ const Table = () => {
           <tr>
             <td>Services</td>
             <td className={css.tdDescription}>This is the Services page</td>
-            <td>Approved</td>
+            <td className={css.tdStatus}>Approved</td>
             <td className={css.tdIcons}>
               <span>
-                <button>
+                <button className={css.tdButton}>
                   <FaTrashAlt />
                 </button>
               </span>
               <span>
-                <button>
+                <button className={css.tdButton}>
                   <FaPencilAlt />
                 </button>
               </span>
