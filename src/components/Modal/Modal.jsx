@@ -1,12 +1,15 @@
 import css from './Modal.module.css';
 
-const Modal = () => {
+const Modal = ({ closeModal }) => {
   const handleSubmit = () => {
-    alert('Form submitted');
+    e.preventDefault();
   };
   return (
     <div className={css.modalContainer}>
       <div className={css.modal}>
+        <button onClick={closeModal} className={css.closeBtn}>
+          X
+        </button>
         <form onSubmit={handleSubmit}>
           <div className={css.formGroup}>
             <label htmlFor="page">

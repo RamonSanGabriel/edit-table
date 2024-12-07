@@ -38,7 +38,7 @@ textarea {
   width: 90%;
 }
 textarea {
-  /* resize: none; */
+  resize: none;
 }
 input::placeholder,
 textarea::placeholder {
@@ -48,12 +48,27 @@ textarea::placeholder {
 }
 select {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 6px;
+  width: 100%;
 }
 button[type='submit'] {
   margin-top: 15px;
   &:hover {
     opacity: 0.9;
+    color: #3a86ff;
+  }
+}
+.closeBtn {
+  display: block;
+  margin-left: auto;
+  border: none;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  padding: 5px 10px;
+  outline: none;
+  &:hover {
+    opacity: 0.9;
+    color: #3a86ff;
   }
 }
