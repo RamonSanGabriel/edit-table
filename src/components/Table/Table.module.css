@@ -40,7 +40,11 @@ th {
   border-radius: 3px;
 }
 .tdButton {
-  margin: 2px 0;
+  margin-bottom: 5px;
+  @media (width > 767px) {
+    margin: 2px 0;
+    margin-right: 5px;
+  }
 }
 .tdIcons {
   /* display: flex; */
