@@ -54,21 +54,26 @@ select {
 }
 button[type='submit'] {
   margin-top: 15px;
-  &:hover {
+  /* transition: color 250ms ease-in, opacity 250ms ease-in; */
+
+  /*   &:hover {
     opacity: 0.9;
     color: #3a86ff;
-  }
+  } */
 }
 .closeBtn {
   display: block;
   margin-left: auto;
-  border: none;
+  /* border: none; */
   border-radius: 50%;
   margin-bottom: 30px;
   padding: 5px 10px;
-  outline: none;
+  /* outline: none; */
+  /*   transition: color 250ms ease-in, opacity 250ms ease-in;
+
   &:hover {
     opacity: 0.9;
     color: #3a86ff;
-  }
+    font-weight: 600;
+  } */
 }
