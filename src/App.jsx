@@ -3,6 +3,7 @@ import './App.css';
 import Table from './components/Table/Table';
 import Modal from './components/Modal/Modal';
 import AddBtn from './components/AddBtn/AddBtn';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -20,6 +21,7 @@ function App() {
           }}
         />
       )}
+      <Footer />
     </div>
   );
 }
