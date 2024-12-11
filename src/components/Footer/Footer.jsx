@@ -1,4 +1,4 @@
-import { footerDetails } from '../../data/FooterDetails';
+import { footerDetails } from '../../data/footerDetails';
 import css from './Footer.module.css';
 
 const Footer = () => {
