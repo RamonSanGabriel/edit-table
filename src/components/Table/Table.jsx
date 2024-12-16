@@ -1,4 +1,4 @@
-import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
+import { FaPencilAlt, FaTrashAlt, FaUpload } from 'react-icons/fa';
 import css from './Table.module.css';
 
 const Table = () => {
@@ -7,17 +7,25 @@ const Table = () => {
       <table>
         <thead>
           <tr>
-            <th>Page</th>
+            <th>Name</th>
             <th>Description</th>
             <th>Status</th>
+            <th>Upload</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Home</td>
-            <td className={css.tdDescription}>This is the home page</td>
-            <td className={css.tdStatus}>Live</td>
+            <td>Agent Name</td>
+            <td className={css.tdDescription}>This is an agent</td>
+            <td className={css.tdStatus}>Bad</td>
+            <td className={css.tdStatus}>
+              <span>
+                <button className={css.tdButton}>
+                  <FaUpload />
+                </button>
+              </span>
+            </td>
             <td className={css.tdIcons}>
               <span>
                 <button className={css.tdButton}>
@@ -32,9 +40,16 @@ const Table = () => {
             </td>
           </tr>
           <tr>
-            <td>About</td>
-            <td className={css.tdDescription}>This is the About page</td>
-            <td className={css.tdStatus}>Draft</td>
+            <td>Guest Name</td>
+            <td className={css.tdDescription}>This is a guest</td>
+            <td className={css.tdStatus}>Good</td>
+            <td className={css.tdStatus}>
+              <span>
+                <button className={css.tdButton}>
+                  <FaUpload />
+                </button>
+              </span>
+            </td>
             <td className={css.tdIcons}>
               <span>
                 <button className={css.tdButton}>
@@ -49,9 +64,16 @@ const Table = () => {
             </td>
           </tr>
           <tr>
-            <td>Services</td>
-            <td className={css.tdDescription}>This is the Services page</td>
-            <td className={css.tdStatus}>Approved</td>
+            <td>Owner Name</td>
+            <td className={css.tdDescription}>This is an owner</td>
+            <td className={css.tdStatus}>For review</td>
+            <td className={css.tdStatus}>
+              <span>
+                <button className={css.tdButton}>
+                  <FaUpload />
+                </button>
+              </span>
+            </td>
             <td className={css.tdIcons}>
               <span>
                 <button className={css.tdButton}>

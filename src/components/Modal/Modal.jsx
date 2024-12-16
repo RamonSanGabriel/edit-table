@@ -13,7 +13,7 @@ const Modal = ({ closeModal }) => {
         <form onSubmit={handleSubmit}>
           <div className={css.formGroup}>
             <label htmlFor="page">
-              <p>Page</p>
+              <p>Name</p>
               <input
                 type="text"
                 name="page"
@@ -24,12 +24,12 @@ const Modal = ({ closeModal }) => {
           </div>
           <div className={css.formGroup}>
             <label htmlFor="description">
-              <p>Description</p>
-              <textarea
-                name="description"
-                id="description"
-                placeholder="Enter the page description"
-              ></textarea>
+              <p>Status</p>
+              <select name="description" id="description">
+                <option value="agent">Live</option>
+                <option value="guest">Draft</option>
+                <option value="owner">Approved</option>
+              </select>
             </label>
           </div>
           <div className={css.formGroup}>
@@ -40,6 +40,16 @@ const Modal = ({ closeModal }) => {
                 <option value="draft">Draft</option>
                 <option value="approved">Approved</option>
               </select>
+            </label>
+          </div>
+          <div className={css.formGroup}>
+            <label htmlFor="description">
+              <p>Remarks</p>
+              <textarea
+                name="remarks"
+                id="remarks"
+                placeholder="Enter a brief note about this person"
+              ></textarea>
             </label>
           </div>
           <button className={css.submitBtn} type="submit">
