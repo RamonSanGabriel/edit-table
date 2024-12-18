@@ -9,7 +9,7 @@ const Table = () => {
           <tr>
             <th>Name</th>
             <th>Description</th>
-            <th>Status</th>
+            <th>Reviews</th>
             <th>Upload</th>
             <th>Actions</th>
           </tr>
