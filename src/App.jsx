@@ -36,17 +36,22 @@ function App() {
   const handleDelete = (index) => {
     setData(data.filter((_, indexDel) => indexDel !== index));
     // toast.success('Deleted successfully');
-    toast.success('Deleted successfully!', {
-      style: {
-        border: '1px solid hsl(0, 100%, 47%)',
-        padding: '16px',
-        color: 'hsl(0, 100%, 47%)',
-      },
-      iconTheme: {
-        primary: 'hsl(0, 100%, 90%)',
-        secondary: 'hsl(0, 100%, 47%)',
-      },
-    });
+    toast.success(
+      <span>
+        <b>Deleted</b> successfully
+      </span>,
+      {
+        style: {
+          border: '1px solid hsl(0, 100%, 47%)',
+          padding: '16px',
+          color: 'hsl(0, 100%, 47%)',
+        },
+        iconTheme: {
+          primary: 'hsl(0, 100%, 90%)',
+          secondary: 'hsl(0, 100%, 47%)',
+        },
+      }
+    );
   };
 
   return (
