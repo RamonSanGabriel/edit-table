@@ -26,6 +26,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   /* min-width: 320px; */
   /* min-height: 100vh; */
 }
