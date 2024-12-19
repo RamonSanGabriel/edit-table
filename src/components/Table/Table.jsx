@@ -1,7 +1,7 @@
 import { FaPencilAlt, FaTrashAlt, FaUpload } from 'react-icons/fa';
 import css from './Table.module.css';
 
-const Table = () => {
+const Table = ({ data, handleDelete }) => {
   return (
     <div>
       <table>
@@ -9,13 +9,42 @@ const Table = () => {
           <tr>
             <th>Name</th>
             <th>Description</th>
-            <th>Reviews</th>
+            <th>Review</th>
             <th>Upload</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          {data.map((item, index) => (
+            <tr key={index}>
+              <td>{item.name}</td>
+              <td>{item.description}</td>
+              <td>{item.review}</td>
+              <td className={css.tdStatus}>
+                <span>
+                  <button className={css.tdButton}>
+                    <FaUpload />
+                  </button>
+                </span>
+              </td>
+              <td className={css.tdIcons}>
+                <span>
+                  <button
+                    className={css.tdButton}
+                    onClick={() => handleDelete(index)}
+                  >
+                    <FaTrashAlt />
+                  </button>
+                </span>
+                <span>
+                  <button className={css.tdButton}>
+                    <FaPencilAlt />
+                  </button>
+                </span>
+              </td>
+            </tr>
+          ))}
+          {/*   <tr>
             <td>Agent Name</td>
             <td className={css.tdDescription}>This is an agent</td>
             <td className={css.tdStatus}>Bad</td>
@@ -66,7 +95,7 @@ const Table = () => {
           <tr>
             <td>Owner Name</td>
             <td className={css.tdDescription}>This is an owner</td>
-            <td className={css.tdStatus}>For review</td>
+            <td className={css.tdStatus}>Pending</td>
             <td className={css.tdStatus}>
               <span>
                 <button className={css.tdButton}>
@@ -86,7 +115,7 @@ const Table = () => {
                 </button>
               </span>
             </td>
-          </tr>
+          </tr> */}
         </tbody>
       </table>
     </div>

@@ -1,6 +1,30 @@
+import { useState } from 'react';
 import css from './Modal.module.css';
 
+export const InitialContacts = [{}];
+
 const Modal = ({ closeModal }) => {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [review, setReview] = useState('');
+  const [remarks, setRemarks] = useState('');
+  const [formState, setFormState] = useState({
+    name: '',
+    description: '',
+    review: '',
+    upload: '',
+    action: '',
+  });
+
+  const handleChange = () => {
+    setFormState({
+      ...formState,
+      name,
+      description,
+      review,
+      [e.target.value]: e.target.value,
+    });
+  };
   const handleSubmit = () => {
     e.preventDefault();
   };
@@ -13,32 +37,32 @@ const Modal = ({ closeModal }) => {
         <form onSubmit={handleSubmit}>
           <div className={css.formGroup}>
             <label htmlFor="page">
-              <p>Name</p>
+              <p>Full name</p>
               <input
                 type="text"
                 name="page"
                 id="page"
-                placeholder="Enter the page name"
+                placeholder="Enter Agent, Guest or Owner"
               />
             </label>
           </div>
           <div className={css.formGroup}>
             <label htmlFor="description">
-              <p>Status</p>
+              <p>Description</p>
               <select name="description" id="description">
-                <option value="agent">Live</option>
-                <option value="guest">Draft</option>
-                <option value="owner">Approved</option>
+                <option value="agent">Guest</option>
+                <option value="guest">Agent</option>
+                <option value="owner">Owner</option>
               </select>
             </label>
           </div>
           <div className={css.formGroup}>
             <label htmlFor="status">
-              <p>Status</p>
+              <p>Review</p>
               <select name="status" id="status">
-                <option value="live">Live</option>
-                <option value="draft">Draft</option>
-                <option value="approved">Approved</option>
+                <option value="live">Good</option>
+                <option value="draft">Bad</option>
+                <option value="approved">Pending</option>
               </select>
             </label>
           </div>
@@ -49,7 +73,7 @@ const Modal = ({ closeModal }) => {
                 name="remarks"
                 id="remarks"
                 placeholder="Enter a brief note about this person"
-              ></textarea>
+              />
             </label>
           </div>
           <button className={css.submitBtn} type="submit">

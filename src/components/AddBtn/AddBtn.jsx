@@ -9,5 +9,4 @@ const AddBtn = ({ setModalOpen }) => {
     </div>
   );
 };
-
 export default AddBtn;
