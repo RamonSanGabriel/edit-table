@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="appContainer">
-      <Toaster />
+      <Toaster position="top-right" />
       <h1>React Editable Table</h1>
       <Table data={data} handleDelete={handleDelete} />
       <AddBtn setModalOpen={setModalOpen} />
