@@ -12,27 +12,27 @@ function App() {
   const [notesModalOpen, setNotesModalOpen] = useState(false);
   const [data, setData] = useState([
     {
-      name: 'Ramon',
-      description: 'Agent',
-      rating: 'Bad',
-      notes:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nam voluptates sunt odio nihil amet impedit accusamus debitis dignissimos nostrum! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nam voluptates sunt odio nihil amet impedit accusamus debitis dignissimos nostrum!',
-      upload: '',
-      actions: '',
-    },
-    {
-      name: 'Klarese',
-      description: 'Owner',
-      rating: 'Good',
-      notes:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nam voluptates sunt odio nihil amet impedit accusamus debitis dignissimos nostrum!',
-      upload: '',
-      actions: '',
-    },
-    {
       name: 'Trevi',
       description: 'Guest',
+      rating: 'Good',
+      notes:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, itaque? Esse sint mollitia, optio, pariatur officiis cupiditate velit delectus debitis libero corrupti nobis in atque ab autem a dolorum quae recusandae maxime sequi maiores consectetur aspernatur voluptatibus ipsa. Rem provident eos commodi laborum. Enim ex, totam autem consequatur itaque inventore rem vero provident voluptate harum quasi iusto dolore. Deleniti, fugit.',
+      upload: '',
+      actions: '',
+    },
+    {
+      name: 'Klaire',
+      description: 'Owner',
       rating: 'Pending',
+      notes:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, itaque? Esse sint mollitia, optio, pariatur officiis cupiditate velit delectus debitis libero corrupti nobis in atque ab autem a dolorum quae recusandae maxime sequi maiores consectetur aspernatur voluptatibus ipsa. Rem provident eos commodi laborum. Enim ex, totam autem consequatur itaque inventore rem vero provident voluptate harum quasi iusto dolore. Deleniti, fugit.',
+      upload: '',
+      actions: '',
+    },
+    {
+      name: 'Mon',
+      description: 'Agent',
+      rating: 'Bad',
       notes:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, itaque? Esse sint mollitia, optio, pariatur officiis cupiditate velit delectus debitis libero corrupti nobis in atque ab autem a dolorum quae recusandae maxime sequi maiores consectetur aspernatur voluptatibus ipsa. Rem provident eos commodi laborum. Enim ex, totam autem consequatur itaque inventore rem vero provident voluptate harum quasi iusto dolore. Deleniti, fugit.',
       upload: '',
@@ -45,12 +45,12 @@ function App() {
     setData(data.filter((_, indexDel) => indexDel !== index));
     toast.success(
       <>
-        <b>{deletedItem.name} </b> &nbsp; was successfully deleted
+        <b>{deletedItem.name}</b> &nbsp; was successfully deleted
       </>,
       {
         style: {
           border: '1px solid hsl(0, 100%, 47%)',
-          padding: '16px',
+          padding: '1rem',
           color: 'hsl(0, 100%, 47%)',
         },
         iconTheme: {
