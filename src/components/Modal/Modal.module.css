@@ -38,21 +38,22 @@
 label p {
   margin: 0;
   text-align: left;
+  font-weight: 600;
 }
 input,
 textarea {
-  display: block;
+  /* display: block; */
   padding: 1rem;
   border-radius: 6px;
   width: 100%;
-}
-textarea {
   resize: none;
 }
-/* input::placeholder,
-textarea::placeholder {
-
-} */
+.formGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
+  gap: 5px;
+}
 select {
   display: block;
   padding: 1rem;
@@ -97,9 +98,8 @@ button[type='cancel'] {
 .closeBtn {
   display: block;
   margin-left: auto;
-  /* border: none; */
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding: 5px 10px;
 }
 .submitCancel {

@@ -28,7 +28,7 @@ const NotesModal = ({ closeModal }) => {
                 className={css.textAreaNotes}
                 name="notes"
                 id="notes"
-                placeholder="Based on your rating, tell us your experience..."
+                placeholder="Based on your rating, tell us more about your experience."
                 rows="20"
                 cols="50"
                 value={formState.notes}

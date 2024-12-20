@@ -12,11 +12,9 @@
 }
 
 .modal {
-  top: 0;
-  left: 0;
   background-color: #fff;
   color: #000;
-  padding: 1rem 2rem 2rem;
+  padding: 0.625rem;
   border-radius: 12px;
   width: 25em;
   overflow: hidden;
@@ -26,7 +24,7 @@
   transition-duration: 1s;
   transition-behavior: allow-discrete;
   translate: 0 0;
-
+  /* padding: 1rem 2rem 2rem; */
   @starting-style {
     translate: 0 -25vh;
     opacity: 0;
@@ -40,6 +38,7 @@
 label p {
   margin: 0;
   text-align: left;
+  font-weight: 600;
 }
 input,
 textarea {
@@ -52,19 +51,7 @@ textarea {
 .textAreaNotes {
   pointer-events: none;
 }
-/* input::placeholder,
-textarea::placeholder {
 
-} */
-select {
-  display: block;
-  padding: 1rem;
-  border-radius: 6px;
-  width: 100%;
-}
-button[type='submit'] {
-  margin-top: 15px;
-}
 .closeBtn {
   display: block;
   margin-left: auto;
