@@ -66,7 +66,7 @@ function App() {
   return (
     <div className="appContainer">
       <Toaster position="top-right" />
-      <h1>React Editable Table</h1>
+      <h2>Shore Residences Record</h2>
       <Table
         data={data}
         handleDelete={handleDelete}

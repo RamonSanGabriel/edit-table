@@ -1,13 +1,21 @@
-#root {
+/* #root {
   display: block;
   text-align: center;
   max-width: 1280px;
   margin: 0 auto;
-  /* place-items: center; */
+  place-items: center;
   padding: 1rem;
-}
+} */
 
 .appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  /* place-content: center; */
+  /* background-color: #f0f0f0; */
   /* padding: 0 20px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
