@@ -10,23 +10,29 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [data, setData] = useState([
     {
-      name: 'Agent name',
-      description: 'This is an agent',
-      review: 'Bad',
+      name: 'Ramon',
+      description: 'Agent',
+      rating: 'Bad',
+      notes:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto natus libero minima placeat ducimus nihil repudiandae laborum fuga adipisci. Dolorem veritatis expedita assumenda. Nihil doloribus minima fuga quis enim quas.',
       upload: '',
       actions: '',
     },
     {
-      name: 'Owner name',
-      description: 'This is an owner',
-      review: 'Good',
+      name: 'Klarese',
+      description: 'Owner',
+      rating: 'Good',
+      notes:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dicta minima dignissimos, ipsum dolorum debitis vitae pariatur? Eveniet, aperiam voluptas.',
       upload: '',
       actions: '',
     },
     {
-      name: 'Guest name',
-      description: 'This is a guest',
-      review: 'Pending',
+      name: 'Trevi',
+      description: 'Guest',
+      rating: 'Pending',
+      notes:
+        ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quia architecto vel, vero modi harum, veniam unde earum tempore, voluptas quo similique ducimus nostrum non magnam. Recusandae deserunt architecto cum.',
       upload: '',
       actions: '',
     },

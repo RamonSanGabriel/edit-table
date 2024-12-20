@@ -9,7 +9,8 @@ const Table = ({ data, handleDelete }) => {
           <tr>
             <th>Name</th>
             <th>Description</th>
-            <th>Review</th>
+            <th>Rating</th>
+            <th>Notes</th>
             <th>Upload</th>
             <th>Actions</th>
           </tr>
@@ -19,8 +20,9 @@ const Table = ({ data, handleDelete }) => {
             <tr key={index}>
               <td>{item.name}</td>
               <td>{item.description}</td>
-              <td>{item.review}</td>
-              <td className={css.tdStatus}>
+              <td>{item.rating}</td>
+              <td>{item.notes}</td>
+              <td className={css.tdUpload}>
                 <span>
                   <button className={css.tdButton}>
                     <FaUpload />

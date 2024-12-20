@@ -4,14 +4,10 @@ import css from './Modal.module.css';
 export const InitialContacts = [{}];
 
 const Modal = ({ closeModal, onSubmit, handleNewData }) => {
-  /*   const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [review, setReview] = useState('');
-  const [remarks, setRemarks] = useState(''); */
   const [formState, setFormState] = useState({
     name: '',
     description: '',
-    review: '',
+    rating: '',
     notes: '',
   });
 
@@ -23,6 +19,14 @@ const Modal = ({ closeModal, onSubmit, handleNewData }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      formState.name.trim() === '' ||
+      formState.description.trim() === '' ||
+      formState.rating.trim() === '' ||
+      formState.notes.trim() === ''
+    )
+      return;
     onSubmit(formState);
     closeModal();
     console.log(formState.name);
@@ -63,12 +67,12 @@ const Modal = ({ closeModal, onSubmit, handleNewData }) => {
             </label>
           </div>
           <div className={css.formGroup}>
-            <label htmlFor="review">
-              <p>Review</p>
+            <label htmlFor="rating">
+              <p>Rating</p>
               <select
-                name="review"
-                id="review"
-                value={formState.review}
+                name="rating"
+                id="rating"
+                value={formState.rating}
                 onChange={handleChange}
               >
                 <option value="good">Good</option>
