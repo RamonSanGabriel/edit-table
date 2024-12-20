@@ -42,7 +42,7 @@
   opacity: 1; */
 }
 
-.formGroup {
+.notesFormGroup {
   /* width: 100%; */
   /* padding: 2rem; */
   /*  margin-bottom: 0.313rem;
@@ -58,9 +58,10 @@ textarea {
   padding: 1rem;
   border-radius: 6px;
   width: 90%;
-}
-textarea {
   resize: none;
+}
+.textAreaNotes {
+  pointer-events: none;
 }
 input::placeholder,
 textarea::placeholder {
@@ -74,8 +75,7 @@ select {
   border-radius: 6px;
   width: 100%;
 }
-button[type='submit'],
-button[type='cancel'] {
+button[type='submit'] {
   margin-top: 15px;
   /* transition: color 250ms ease-in, opacity 250ms ease-in; */
 
@@ -99,8 +99,4 @@ button[type='cancel'] {
     color: #3a86ff;
     font-weight: 600;
   } */
-}
-.submitCancel {
-  display: flex;
-  justify-content: space-around;
 }

@@ -46,6 +46,7 @@ const Modal = ({ closeModal, onSubmit, handleNewData }) => {
                 name="name"
                 id="name"
                 placeholder="Enter Agent, Guest or Owner"
+                autoComplete="off"
                 value={formState.name}
                 onChange={handleChange}
               />
@@ -57,12 +58,13 @@ const Modal = ({ closeModal, onSubmit, handleNewData }) => {
               <select
                 name="description"
                 id="description"
+                autoComplete="off"
                 value={formState.description}
                 onChange={handleChange}
               >
-                <option value="guest">Guest</option>
-                <option value="agent">Agent</option>
-                <option value="owner">Owner</option>
+                <option value="Guest">Guest</option>
+                <option value="Agent">Agent</option>
+                <option value="Owner">Owner</option>
               </select>
             </label>
           </div>
@@ -75,14 +77,14 @@ const Modal = ({ closeModal, onSubmit, handleNewData }) => {
                 value={formState.rating}
                 onChange={handleChange}
               >
-                <option value="good">Good</option>
-                <option value="bad">Bad</option>
-                <option value="pending">Pending</option>
+                <option value="Good">Good</option>
+                <option value="Bad">Bad</option>
+                <option value="Pending">Pending</option>
               </select>
             </label>
           </div>
           <div className={css.formGroup}>
-            <label htmlFor="description">
+            <label htmlFor="notes">
               <p>Notes</p>
               <textarea
                 name="notes"
@@ -93,14 +95,18 @@ const Modal = ({ closeModal, onSubmit, handleNewData }) => {
               />
             </label>
           </div>
-          <button
-            className={css.submitBtn}
-            type="submit"
-            onClick={handleSubmit}
-            onSubmit={handleNewData}
-          >
-            Submit
-          </button>
+          <div className={css.submitCancel}>
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              onSubmit={handleNewData}
+            >
+              Submit
+            </button>
+            <button type="cancel" onClick={closeModal}>
+              Cancel
+            </button>
+          </div>
         </form>
       </div>
     </div>

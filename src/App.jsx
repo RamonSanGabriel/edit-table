@@ -5,16 +5,17 @@ import Modal from './components/Modal/Modal';
 import AddBtn from './components/AddBtn/AddBtn';
 import Footer from './components/Footer/Footer';
 import toast, { Toaster } from 'react-hot-toast';
+import NotesModal from './components/NotesModal/NotesModal';
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [notesModalOpen, setNotesModalOpen] = useState(false);
   const [data, setData] = useState([
     {
       name: 'Ramon',
       description: 'Agent',
       rating: 'Bad',
-      notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto natus libero minima placeat ducimus nihil repudiandae laborum fuga adipisci. Dolorem veritatis expedita assumenda. Nihil doloribus minima fuga quis enim quas.',
+      notes: '',
       upload: '',
       actions: '',
     },
@@ -22,8 +23,7 @@ function App() {
       name: 'Klarese',
       description: 'Owner',
       rating: 'Good',
-      notes:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dicta minima dignissimos, ipsum dolorum debitis vitae pariatur? Eveniet, aperiam voluptas.',
+      notes: '',
       upload: '',
       actions: '',
     },
@@ -31,8 +31,7 @@ function App() {
       name: 'Trevi',
       description: 'Guest',
       rating: 'Pending',
-      notes:
-        ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quia architecto vel, vero modi harum, veniam unde earum tempore, voluptas quo similique ducimus nostrum non magnam. Recusandae deserunt architecto cum.',
+      notes: '',
       upload: '',
       actions: '',
     },
@@ -43,7 +42,7 @@ function App() {
     setData(data.filter((_, indexDel) => indexDel !== index));
     toast.success(
       <>
-        <b>{deletedItem.name} </b> &nbsp; was deleted
+        <b>{deletedItem.name} </b> &nbsp; was successfully deleted
       </>,
       {
         style: {
@@ -68,7 +67,11 @@ function App() {
     <div className="appContainer">
       <Toaster position="top-right" />
       <h1>React Editable Table</h1>
-      <Table data={data} handleDelete={handleDelete} />
+      <Table
+        data={data}
+        handleDelete={handleDelete}
+        setNotesModalOpen={setNotesModalOpen}
+      />
       <AddBtn setModalOpen={setModalOpen} />
       {/* <Modal /> */}
       {modalOpen && (
@@ -77,6 +80,13 @@ function App() {
             setModalOpen(false);
           }}
           onSubmit={handleNewData}
+        />
+      )}
+      {notesModalOpen && (
+        <NotesModal
+          closeModal={() => {
+            setNotesModalOpen(false);
+          }}
         />
       )}
       <Footer />

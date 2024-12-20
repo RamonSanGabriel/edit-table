@@ -1,7 +1,8 @@
 import { FaPencilAlt, FaTrashAlt, FaUpload } from 'react-icons/fa';
+import { TbNotes } from 'react-icons/tb';
 import css from './Table.module.css';
 
-const Table = ({ data, handleDelete }) => {
+const Table = ({ data, handleDelete, setNotesModalOpen }) => {
   return (
     <div>
       <table>
@@ -21,7 +22,14 @@ const Table = ({ data, handleDelete }) => {
               <td>{item.name}</td>
               <td>{item.description}</td>
               <td>{item.rating}</td>
-              <td>{item.notes}</td>
+              <td>
+                {' '}
+                <span>
+                  <button className={css.tdButton} onClick={setNotesModalOpen}>
+                    <TbNotes />
+                  </button>
+                </span>
+              </td>
               <td className={css.tdUpload}>
                 <span>
                   <button className={css.tdButton}>
@@ -29,7 +37,7 @@ const Table = ({ data, handleDelete }) => {
                   </button>
                 </span>
               </td>
-              <td className={css.tdIcons}>
+              <td className={css.tdActions}>
                 <span>
                   <button
                     className={css.tdButton}
