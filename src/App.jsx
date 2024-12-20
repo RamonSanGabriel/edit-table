@@ -8,7 +8,6 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
-
   const [data, setData] = useState([
     {
       name: 'Agent name',
@@ -34,12 +33,12 @@ function App() {
   ]);
 
   const handleDelete = (index) => {
+    const deletedItem = data[index];
     setData(data.filter((_, indexDel) => indexDel !== index));
-    // toast.success('Deleted successfully');
     toast.success(
-      <span>
-        <b>Deleted</b> successfully
-      </span>,
+      <>
+        <b>{deletedItem.name} </b> &nbsp; was deleted
+      </>,
       {
         style: {
           border: '1px solid hsl(0, 100%, 47%)',
@@ -52,6 +51,11 @@ function App() {
         },
       }
     );
+    console.log(deletedItem.name);
+  };
+
+  const handleNewData = (newData) => {
+    setData([...data, newData]);
   };
 
   return (
@@ -66,6 +70,7 @@ function App() {
           closeModal={() => {
             setModalOpen(false);
           }}
+          onSubmit={handleNewData}
         />
       )}
       <Footer />

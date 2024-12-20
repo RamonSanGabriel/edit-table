@@ -3,30 +3,29 @@ import css from './Modal.module.css';
 
 export const InitialContacts = [{}];
 
-const Modal = ({ closeModal }) => {
-  const [name, setName] = useState('');
+const Modal = ({ closeModal, onSubmit, handleNewData }) => {
+  /*   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [review, setReview] = useState('');
-  const [remarks, setRemarks] = useState('');
+  const [remarks, setRemarks] = useState(''); */
   const [formState, setFormState] = useState({
     name: '',
     description: '',
     review: '',
-    upload: '',
-    action: '',
+    notes: '',
   });
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     setFormState({
       ...formState,
-      name,
-      description,
-      review,
-      [e.target.value]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    onSubmit(formState);
+    closeModal();
+    console.log(formState.name);
   };
   return (
     <div className={css.modalContainer}>
@@ -36,47 +35,66 @@ const Modal = ({ closeModal }) => {
         </button>
         <form onSubmit={handleSubmit}>
           <div className={css.formGroup}>
-            <label htmlFor="page">
+            <label htmlFor="name">
               <p>Full name</p>
               <input
                 type="text"
-                name="page"
-                id="page"
+                name="name"
+                id="name"
                 placeholder="Enter Agent, Guest or Owner"
+                value={formState.name}
+                onChange={handleChange}
               />
             </label>
           </div>
           <div className={css.formGroup}>
             <label htmlFor="description">
               <p>Description</p>
-              <select name="description" id="description">
-                <option value="agent">Guest</option>
-                <option value="guest">Agent</option>
+              <select
+                name="description"
+                id="description"
+                value={formState.description}
+                onChange={handleChange}
+              >
+                <option value="guest">Guest</option>
+                <option value="agent">Agent</option>
                 <option value="owner">Owner</option>
               </select>
             </label>
           </div>
           <div className={css.formGroup}>
-            <label htmlFor="status">
+            <label htmlFor="review">
               <p>Review</p>
-              <select name="status" id="status">
-                <option value="live">Good</option>
-                <option value="draft">Bad</option>
-                <option value="approved">Pending</option>
+              <select
+                name="review"
+                id="review"
+                value={formState.review}
+                onChange={handleChange}
+              >
+                <option value="good">Good</option>
+                <option value="bad">Bad</option>
+                <option value="pending">Pending</option>
               </select>
             </label>
           </div>
           <div className={css.formGroup}>
             <label htmlFor="description">
-              <p>Remarks</p>
+              <p>Notes</p>
               <textarea
-                name="remarks"
-                id="remarks"
+                name="notes"
+                id="notes"
                 placeholder="Enter a brief note about this person"
+                value={formState.notes}
+                onChange={handleChange}
               />
             </label>
           </div>
-          <button className={css.submitBtn} type="submit">
+          <button
+            className={css.submitBtn}
+            type="submit"
+            onClick={handleSubmit}
+            onSubmit={handleNewData}
+          >
             Submit
           </button>
         </form>
