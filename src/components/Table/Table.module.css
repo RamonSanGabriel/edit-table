@@ -17,6 +17,7 @@ table {
 
   @media (width > 767px) {
     max-width: 100%;
+    white-space: normal;
   }
   & thead {
     overflow: hidden;
@@ -57,21 +58,25 @@ th {
 }
 .tdButton {
   margin-bottom: 5px;
+
   @media (width > 767px) {
     margin: 2px 0;
     margin-right: 5px;
   }
 }
-.tdActions {
-  /* display: flex; */
-  /*   justify-content: center;
-  justify-items: center;
-  align-items: center; */
-  /* gap: 4px; */
+.tdNotes {
+  display: none;
 
-  /*  @media (width > 767px) {
-    gap: 8px;
-    align-items: center;
-    justify-content: space-around;
-  } */
+  @media (width > 767px) {
+    display: table-cell;
+    font-size: 0.875rem;
+    max-width: 900px;
+  }
+}
+.tbNotesIcon {
+  display: visible;
+
+  @media (width > 767px) {
+    display: none;
+  }
 }

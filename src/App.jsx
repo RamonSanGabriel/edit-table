@@ -15,7 +15,8 @@ function App() {
       name: 'Ramon',
       description: 'Agent',
       rating: 'Bad',
-      notes: '',
+      notes:
+        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nam voluptates sunt odio nihil amet impedit accusamus debitis dignissimos nostrum! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nam voluptates sunt odio nihil amet impedit accusamus debitis dignissimos nostrum!',
       upload: '',
       actions: '',
     },
@@ -23,7 +24,8 @@ function App() {
       name: 'Klarese',
       description: 'Owner',
       rating: 'Good',
-      notes: '',
+      notes:
+        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae nam voluptates sunt odio nihil amet impedit accusamus debitis dignissimos nostrum!',
       upload: '',
       actions: '',
     },
@@ -31,7 +33,8 @@ function App() {
       name: 'Trevi',
       description: 'Guest',
       rating: 'Pending',
-      notes: '',
+      notes:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, itaque? Esse sint mollitia, optio, pariatur officiis cupiditate velit delectus debitis libero corrupti nobis in atque ab autem a dolorum quae recusandae maxime sequi maiores consectetur aspernatur voluptatibus ipsa. Rem provident eos commodi laborum. Enim ex, totam autem consequatur itaque inventore rem vero provident voluptate harum quasi iusto dolore. Deleniti, fugit.',
       upload: '',
       actions: '',
     },
@@ -66,7 +69,7 @@ function App() {
   return (
     <div className="appContainer">
       <Toaster position="top-right" />
-      <h2>Shore Residences Record</h2>
+      <h2>Shore Residences Feedback List</h2>
       <Table
         data={data}
         handleDelete={handleDelete}

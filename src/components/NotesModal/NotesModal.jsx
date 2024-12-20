@@ -29,7 +29,7 @@ const NotesModal = ({ closeModal }) => {
                 name="notes"
                 id="notes"
                 placeholder="Based on your rating, tell us your experience..."
-                rows="25"
+                rows="20"
                 cols="50"
                 value={formState.notes}
                 onChange={handleChange}

@@ -24,7 +24,8 @@ const Table = ({ data, handleDelete, setNotesModalOpen }) => {
                 <td>{item.description}</td>
                 <td>{item.rating}</td>
                 <td>
-                  <span>
+                  <p className={css.tdNotes}>{item.notes}</p>
+                  <span className={css.tbNotesIcon}>
                     <button
                       className={css.tdButton}
                       onClick={setNotesModalOpen}
