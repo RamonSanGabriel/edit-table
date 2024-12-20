@@ -22,7 +22,7 @@
   overflow: hidden;
   opacity: 1;
   translate: 0 25vh;
-  transition-property: visibility opacity;
+  transition-property: overlay opacity;
   transition-duration: 1s;
   transition-behavior: allow-discrete;
   translate: 0 0;

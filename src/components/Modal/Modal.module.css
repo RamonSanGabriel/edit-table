@@ -12,8 +12,9 @@
 }
 
 .modal {
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
+
   background-color: #fff;
   color: #000;
   padding: 1rem 2rem 2rem;
@@ -22,7 +23,7 @@
   overflow: hidden;
   opacity: 1;
   translate: 0 25vh;
-  transition-property: visibility opacity;
+  transition-property: overlay opacity;
   transition-duration: 1s;
   transition-behavior: allow-discrete;
   translate: 0 0;
