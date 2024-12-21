@@ -6,6 +6,7 @@ import AddBtn from './components/AddBtn/AddBtn';
 import Footer from './components/Footer/Footer';
 import toast, { Toaster } from 'react-hot-toast';
 import NotesModal from './components/NotesModal/NotesModal';
+import Header from './components/Header/Header';
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -69,7 +70,7 @@ function App() {
   return (
     <div className="appContainer">
       <Toaster position="top-right" />
-      <h2>Shore Residences Feedback List</h2>
+      <Header />
       <Table
         data={data}
         handleDelete={handleDelete}
