@@ -3,13 +3,15 @@ import css from './Modal.module.css';
 
 export const InitialContacts = [{}];
 
-const Modal = ({ closeModal, onSubmit, handleNewData }) => {
-  const [formState, setFormState] = useState({
-    name: '',
-    description: '',
-    rating: '',
-    notes: '',
-  });
+const Modal = ({ closeModal, onSubmit, handleNewData, edit }) => {
+  const [formState, setFormState] = useState(
+    edit || {
+      name: '',
+      description: '',
+      rating: '',
+      notes: '',
+    }
+  );
 
   const handleChange = (e) => {
     setFormState({

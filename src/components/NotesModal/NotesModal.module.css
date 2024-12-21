@@ -50,6 +50,7 @@ textarea {
 }
 .textAreaNotes {
   pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.859);
 }
 
 .closeBtn {
@@ -58,4 +59,20 @@ textarea {
   border-radius: 50%;
   margin-bottom: 10px;
   padding: 5px 10px;
+}
+
+.divModalContent {
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.859);
+  border-radius: 12px;
+  color: #ccc;
+  margin-bottom: 10px;
+
+  & b {
+    font-weight: 400;
+  }
+
+  & i {
+    font-weight: 700;
+  }
 }

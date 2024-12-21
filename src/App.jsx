@@ -11,13 +11,13 @@ import Header from './components/Header/Header';
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [notesModalOpen, setNotesModalOpen] = useState(false);
+  const [edit, setEdit] = useState(null);
   const [data, setData] = useState([
     {
       name: 'Trevi',
       description: 'Guest',
       rating: 'Good',
-      notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, itaque? Esse sint mollitia, optio, pariatur officiis cupiditate velit delectus debitis libero corrupti nobis in atque ab autem a dolorum quae recusandae maxime sequi maiores consectetur aspernatur voluptatibus ipsa. Rem provident eos commodi laborum. Enim ex, totam autem consequatur itaque inventore rem vero provident voluptate harum quasi iusto dolore. Deleniti, fugit.',
+      notes: 'This is sample 1.',
       upload: '',
       actions: '',
     },
@@ -25,8 +25,7 @@ function App() {
       name: 'Klaire',
       description: 'Owner',
       rating: 'Pending',
-      notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, itaque? Esse sint mollitia, optio, pariatur officiis cupiditate velit delectus debitis libero corrupti nobis in atque ab autem a dolorum quae recusandae maxime sequi maiores consectetur aspernatur voluptatibus ipsa. Rem provident eos commodi laborum. Enim ex, totam autem consequatur itaque inventore rem vero provident voluptate harum quasi iusto dolore. Deleniti, fugit.',
+      notes: 'This is sample 2.',
       upload: '',
       actions: '',
     },
@@ -34,8 +33,7 @@ function App() {
       name: 'Mon',
       description: 'Agent',
       rating: 'Bad',
-      notes:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, itaque? Esse sint mollitia, optio, pariatur officiis cupiditate velit delectus debitis libero corrupti nobis in atque ab autem a dolorum quae recusandae maxime sequi maiores consectetur aspernatur voluptatibus ipsa. Rem provident eos commodi laborum. Enim ex, totam autem consequatur itaque inventore rem vero provident voluptate harum quasi iusto dolore. Deleniti, fugit.',
+      notes: 'This is sample 3.',
       upload: '',
       actions: '',
     },
@@ -60,11 +58,24 @@ function App() {
         },
       }
     );
-    console.log(deletedItem.name);
+    // console.log(deletedItem.name);
+  };
+
+  const handleEdit = (index) => {
+    const editedItem = data[index];
+    setEdit(index);
+
+    setModalOpen(true);
   };
 
   const handleNewData = (newData) => {
     setData([...data, newData]);
+  };
+
+  const handleModalNotes = (item) => {
+    const contentItem = data.notes[item];
+    setData(data.find((note) => note !== item));
+    return contentItem;
   };
 
   return (
@@ -74,6 +85,7 @@ function App() {
       <Table
         data={data}
         handleDelete={handleDelete}
+        handleEdit={handleEdit}
         setNotesModalOpen={setNotesModalOpen}
       />
       <AddBtn setModalOpen={setModalOpen} />
@@ -84,10 +96,13 @@ function App() {
             setModalOpen(false);
           }}
           onSubmit={handleNewData}
+          edit={edit !== null && data[edit]}
         />
       )}
       {notesModalOpen && (
         <NotesModal
+          data={data}
+          handleModalNotes={handleModalNotes}
           closeModal={() => {
             setNotesModalOpen(false);
           }}
