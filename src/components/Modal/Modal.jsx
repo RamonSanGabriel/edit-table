@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import css from './Modal.module.css';
 
 export const InitialContacts = [{}];
 
-const Modal = ({ closeModal, onSubmit, handleNewData, edit }) => {
+const Modal = ({ closeModal, onSubmit, handleNewData, edit, modalOpen }) => {
   const [formState, setFormState] = useState(
     edit || {
       name: '',
@@ -12,6 +12,9 @@ const Modal = ({ closeModal, onSubmit, handleNewData, edit }) => {
       notes: '',
     }
   );
+  useEffect(() => {
+    document.body.style.overflow = modalOpen ? 'hidden' : 'unset';
+  }, [modalOpen]);
 
   const handleChange = (e) => {
     setFormState({

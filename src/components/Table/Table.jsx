@@ -65,6 +65,7 @@ const Table = ({ data, handleDelete, handleEdit, handleModalNotes }) => {
           ))}
         </tbody>
       </table>
+
       {/* </div> */}
     </div>
   );

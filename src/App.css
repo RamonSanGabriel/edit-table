@@ -27,3 +27,6 @@
 h2 {
   margin-bottom: 20px;
 }
+body.active-modal {
+  overflow-y: hidden;
+}

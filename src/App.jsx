@@ -15,6 +15,7 @@ const App = () => {
   const [notes, setNotes] = useState('');
   const [data, setData] = useState([
     {
+      id: 1,
       name: 'Trevi',
       description: 'Guest',
       rating: 'Good',
@@ -23,6 +24,7 @@ const App = () => {
       actions: '',
     },
     {
+      id: 2,
       name: 'Klaire',
       description: 'Owner',
       rating: 'Pending',
@@ -31,6 +33,7 @@ const App = () => {
       actions: '',
     },
     {
+      id: 3,
       name: 'Mon',
       description: 'Agent',
       rating: 'Bad',
@@ -63,19 +66,27 @@ const App = () => {
   };
 
   const handleEdit = (index) => {
-    const editedItem = data[index];
     setEdit(index);
     setModalOpen(true);
+    if (modalOpen) {
+      document.body.classList.add('active-modal');
+    } else {
+      document.body.classList.remove('active-modal');
+    }
   };
 
   const handleNewData = (newData) => {
     setData([...data, newData]);
   };
-
   const handleModalNotes = (index) => {
-    const notesItem = data[index];
-    setNotes(notesItem.name);
-    setModalOpen(true);
+    setNotes(index);
+    setNotesModalOpen(true);
+
+    if (notesModalOpen) {
+      document.body.classList.add('active-modal');
+    } else {
+      document.body.classList.remove('active-modal');
+    }
   };
 
   return (
@@ -97,14 +108,14 @@ const App = () => {
             setModalOpen(false);
           }}
           onSubmit={handleNewData}
+          modalOpen={modalOpen}
           edit={edit !== null && data[edit]}
         />
       )}
       {notesModalOpen && (
         <NotesModal
           data={data}
-          handleModalNotes={handleModalNotes}
-          handleEdit={handleEdit}
+          notesModalOpen={notesModalOpen}
           closeModal={() => {
             setNotesModalOpen(false);
           }}
