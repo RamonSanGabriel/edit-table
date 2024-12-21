@@ -8,10 +8,11 @@ import toast, { Toaster } from 'react-hot-toast';
 import NotesModal from './components/NotesModal/NotesModal';
 import Header from './components/Header/Header';
 
-function App() {
+const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [notesModalOpen, setNotesModalOpen] = useState(false);
   const [edit, setEdit] = useState(null);
+  const [notes, setNotes] = useState('');
   const [data, setData] = useState([
     {
       name: 'Trevi',
@@ -64,7 +65,6 @@ function App() {
   const handleEdit = (index) => {
     const editedItem = data[index];
     setEdit(index);
-
     setModalOpen(true);
   };
 
@@ -72,10 +72,10 @@ function App() {
     setData([...data, newData]);
   };
 
-  const handleModalNotes = (item) => {
-    const contentItem = data.notes[item];
-    setData(data.find((note) => note !== item));
-    return contentItem;
+  const handleModalNotes = (index) => {
+    const notesItem = data[index];
+    setNotes(notesItem.name);
+    setModalOpen(true);
   };
 
   return (
@@ -86,6 +86,7 @@ function App() {
         data={data}
         handleDelete={handleDelete}
         handleEdit={handleEdit}
+        handleModalNotes={handleModalNotes}
         setNotesModalOpen={setNotesModalOpen}
       />
       <AddBtn setModalOpen={setModalOpen} />
@@ -103,6 +104,7 @@ function App() {
         <NotesModal
           data={data}
           handleModalNotes={handleModalNotes}
+          handleEdit={handleEdit}
           closeModal={() => {
             setNotesModalOpen(false);
           }}
@@ -111,6 +113,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

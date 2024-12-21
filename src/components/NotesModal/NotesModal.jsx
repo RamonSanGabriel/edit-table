@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import css from './NotesModal.module.css';
 
-const NotesModal = ({ closeModal, data, handleModalNotes, contentItem }) => {
+const NotesModal = ({
+  closeModal,
+  data,
+  handleModalNotes,
+  contentItem,
+  handleEdit,
+}) => {
   const [formState, setFormState] = useState({
     id: '',
     name: '',
