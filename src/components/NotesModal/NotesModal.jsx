@@ -11,6 +11,9 @@ const NotesModal = ({ closeModal, data, notesModalOpen }) => {
   });
   useEffect(() => {
     document.body.style.overflow = notesModalOpen ? 'hidden' : 'unset';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [notesModalOpen]);
   return (
     <div className={css.modalContainer}>

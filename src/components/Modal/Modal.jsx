@@ -14,6 +14,9 @@ const Modal = ({ closeModal, onSubmit, handleNewData, edit, modalOpen }) => {
   );
   useEffect(() => {
     document.body.style.overflow = modalOpen ? 'hidden' : 'unset';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [modalOpen]);
 
   const handleChange = (e) => {
